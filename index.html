@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universo Fútbol</title>
+  <!-- Fuentes (en head para que no bloqueen el CSS con file://) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Framework y librerías (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+  <div class="app-wrapper">
+
+    <!-- ========== INICIO HEADER (Marco Verde) ========== -->
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- Logos: Emisoras Unidas + Universo Fútbol (en mobile quedan al costado) -->
+        <div class="header-logos d-flex align-items-center gap-2 flex-wrap">
+          <div class="logo-small" data-module="01">
+            <img src="./assets/img/logo-emisoras-unidas.png" alt="Emisoras Unidas 89.7" />
+          </div>
+          <div class="logo-main" data-module="02">
+            <img src="./assets/img/logo-universo-futbol.png" alt="Universo Fútbol" />
+          </div>
+        </div>
+        <!-- Widget resultados en vivo: EN VIVO, marcador, grupo. En mobile: EN VIVO pill arriba y centrado, marcador y grupo ancho completo -->
+        <div class="live-widget" id="live-widget" data-module="widget-live" aria-label="Resultados en vivo">
+          <div class="live-widget__live d-flex align-items-center gap-2">
+            <span class="live-widget__badge">EN VIVO</span>
+          </div>
+          <div class="live-widget__score-wrap">
+            <div class="live-widget__match d-flex align-items-center gap-2 flex-wrap">
+              <span class="live-widget__score">02</span>
+              <span class="live-widget__team text-white text-uppercase">USA</span>
+              <img src="./assets/img/usa-icon.png" alt="USA" class="live-widget__flag rounded-circle flex-shrink-0" width="28" height="28" />
+              <img src="./assets/img/paraguay-icon.png" alt="Paraguay" class="live-widget__flag rounded-circle flex-shrink-0" width="28" height="28" />
+              <span class="live-widget__team text-white text-uppercase">PARAGUAY</span>
+              <span class="live-widget__score">02</span>
+            </div>
+            <div class="live-widget__time-wrap d-flex justify-content-center">
+              <span class="live-widget__time">90:00</span>
+            </div>
+          </div>
+          <div class="live-widget__group d-flex align-items-center gap-2">
+            <span class="live-widget__grupo-btn">GRUPO A</span>
+            <div class="live-widget__flags d-flex align-items-center gap-1">
+              <img src="./assets/img/croacia-icon.png" alt="" class="live-widget__flag-sm rounded-circle" width="24" height="24" />
+              <img src="./assets/img/scotland-icon.png" alt="" class="live-widget__flag-sm rounded-circle" width="24" height="24" />
+              <img src="./assets/img/szech-republic-icon.png" alt="" class="live-widget__flag-sm rounded-circle" width="24" height="24" />
+              <img src="./assets/img/usa-icon.png" alt="" class="live-widget__flag-sm rounded-circle" width="24" height="24" />
+            </div>
+            <span class="live-widget__posiciones">POSICIONES</span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ========== FIN HEADER ========== -->
+
+    <!-- ========== INICIO BLOQUE 1: Cards 03 a 11 (wrapper-top) ========== -->
+    <div class="wrapper-top">
+      <!-- Contenido principal: row1 + row2 (sidebar a la derecha en desktop) -->
+      <div class="block1-main">
+        <!-- Subconjunto 1: módulos 3, 4 y 5 -->
+        <div class="block1-row1">
+          <!-- Card 3: carrusel (1–6 slides). Cada slide es clickeable; imagen desde assets/img/ o placeholder; título + bajada. Para más slides: duplicar .carousel-item y añadir <button> en .carousel-indicators con data-bs-slide-to="N". -->
+          <article class="card card-03 box-height-2.5 card-03--carousel" data-module="03" data-aos="fade-up" data-aos-duration="400">
+            <div class="card03-carousel-wrapper h-100 w-100 overflow-hidden rounded">
+              <div id="card03Carousel" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#card03Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#card03Carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#card03Carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner h-100">
+                  <div class="carousel-item active h-100">
+                    <a href="#slide1" class="card03-slide-link d-block h-100 position-relative text-decoration-none">
+                      <img src="./assets/img/imagen-carrusel.png" class="d-block w-100 h-100 object-fit-cover" alt="Historias" />
+                      <div class="card03-slide-caption position-absolute bottom-0 start-0 end-0 p-4 pb-5">
+                        <h6 class="card03-slide-title text-white fw-bold mb-1">Historias</h6>
+                        <p class="card03-slide-desc small text-white-50 mb-0">Calendario de partidos y lo mejor del fútbol.</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="carousel-item h-100">
+                    <a href="#slide2" class="card03-slide-link d-block h-100 position-relative text-decoration-none">
+                      <img src="https://picsum.photos/seed/uf2/800/500" class="d-block w-100 h-100 object-fit-cover" alt="Estadísticas" />
+                      <div class="card03-slide-caption position-absolute bottom-0 start-0 end-0 p-4 pb-5">
+                        <h6 class="card03-slide-title text-white fw-bold mb-1">Estadísticas</h6>
+                        <p class="card03-slide-desc small text-white-50 mb-0">Seguí las cifras de tu equipo y jugadores favoritos.</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="carousel-item h-100">
+                    <a href="#slide3" class="card03-slide-link d-block h-100 position-relative text-decoration-none">
+                      <img src="https://picsum.photos/seed/uf3/800/500" class="d-block w-100 h-100 object-fit-cover" alt="Calendario" />
+                      <div class="card03-slide-caption position-absolute bottom-0 start-0 end-0 p-4 pb-5">
+                        <h6 class="card03-slide-title text-white fw-bold mb-1">Calendario de partidos</h6>
+                        <p class="card03-slide-desc small text-white-50 mb-0">Ver calendarios y fechas de la temporada.</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#card03Carousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#card03Carousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="card card-04 box-height-2.5 card-04--minuto" data-module="04" data-aos="fade-up" data-aos-duration="400" data-aos-delay="50">
+            <div class="card04-media position-relative w-100 h-100 overflow-hidden rounded">
+              <img src="assets/img/img-min-min.png" alt="Minuto a minuto" class="card04-img w-100 h-100 object-fit-cover" />
+              <div class="card04-header position-absolute top-0 start-0 end-0 d-flex align-items-center justify-content-between px-3 py-2">
+                <h2 class="card04-title text-white mb-0 fw-bold">Minuto a minuto</h2>
+                <button type="button" class="card04-btn btn border rounded-pill px-3 py-1">Actualizar</button>
+              </div>
+            </div>
+          </article>
+          <article class="card card-bnr card-05 box-height-1" data-module="05" data-aos="fade-up" data-aos-duration="400" data-aos-delay="100">
+            <img src="./assets/img/bnr2.png" />
+          </article>
+        </div>
+        <!-- Subconjunto 2: módulos 6, 7 y 8 — cabecera por red social (logo en assets/img/) -->
+        <div class="block1-row2">
+          <article class="card card-06 box-height-2 card--social" data-module="06" data-aos="fade-up" data-aos-duration="400" data-aos-delay="100">
+            <header class="card-social-header">
+              <img src="./assets/img/Tiktok-logo-on-transparent-PNG.png" alt="TikTok" class="card-social-logo" width="40" height="40" />
+              <span class="card-social-sep"></span>
+              <img src="./assets/img/logo-emisoras-unidas.png" alt="TikTok" class="card-emisora-logo" width="129" height="40" />
+
+              
+            </header>
+            <div class="card-social-content">
+              <img src="./assets/img/screen-tik-tok.png" alt="Screen Tiktok" class="card-social-screen" width="200" height="330" />
+            </div>
+          </article>
+          <article class="card card-07 box-height-2.5 card--social" data-module="07" data-aos="fade-up" data-aos-duration="400" data-aos-delay="150">
+            <header class="card-social-header">
+              <img src="./assets/img/instagram-icon-logo-free-png.webp" alt="Instagram" class="card-social-logo" width="40" height="40" />
+              <span class="card-social-sep"></span>
+              <img src="./assets/img/logo-emisoras-unidas.png" alt="TikTok" class="card-emisora-logo" width="129" height="40" />
+
+            </header>
+            <div class="card-social-content">
+              <img src="./assets/img/screen-instagram.png" alt="Screen Instagram" class="card-social-screen" width="200" height="330" />
+            </div>
+          </article>
+          <article class="card card-08 box-height-2.5 card--social" data-module="08" data-aos="fade-up" data-aos-duration="400" data-aos-delay="150">
+            <header class="card-social-header">
+              <img src="./assets/img/2023_Facebook_icon.svg.png" alt="Facebook" class="card-social-logo" width="40" height="40" />
+              <span class="card-social-sep"></span>
+              <img src="./assets/img/logo-emisoras-unidas.png" alt="TikTok" class="card-emisora-logo" width="129" height="40" />
+
+            </header>
+            <div class="card-social-content">
+              <img src="./assets/img/screen-facebook.png" alt="Screen Facebook" class="card-social-screen" width="200" height="330" />
+            </div>
+          </article>
+        </div>
+      </div>
+      <!-- Sidebar: módulos 9, 10 y 11 (todos al ancho completo de la sidebar) -->
+      <div class="block1-row3 block1-sidebar">
+        <article class="card card-09 box-height-2.5 card-09--banner" data-module="09" data-aos="fade-up" data-aos-duration="400" data-aos-delay="200">
+          <a href="#" class="card09-banner-link d-block w-100 h-100 overflow-hidden rounded text-decoration-none">
+            <img src="./assets/img/bnr1.png" alt="Universo Fútbol — Emisoras Unidas 89.7" class="card09-banner-img w-100 h-100 object-fit-cover" />
+          </a>
+        </article>
+        <article class="card card-10 box-height-2 card-10--resultados bg-grilla" data-module="10" data-aos="fade-up" data-aos-duration="400" data-aos-delay="200">
+          <h3 class="card10-resultados-title">RESULTADOS EN TIEMPO REAL</h3>
+          <ul class="card10-resultados-list list-unstyled mb-0">
+            <li class="card10-match">
+              <div class="card10-match-left">
+                <span class="card10-match-group">A</span>
+                <img src="./assets/img/usa-icon.png" alt="Bandera USA" class="card10-flag" width="36" height="36" />
+                <img src="./assets/img/paraguay-icon.png" alt="Bandera Paraguay" class="card10-flag" width="36" height="36" />
+              </div>
+              <span class="card10-match-names">USA vs PARAGUAY</span>
+              <span class="card10-match-score">1 - 0 - 67'</span>
+            </li>
+            <li class="card10-match">
+              <div class="card10-match-left">
+                <span class="card10-match-group">A</span>
+                <img src="./assets/img/england-icon.png" alt="Bandera Australia" class="card10-flag" width="36" height="36" />
+                <img src="./assets/img/fifa-icon.jpg" alt="Logo FIFA" class="card10-flag" width="36" height="36" />
+              </div>
+              <span class="card10-match-names">AUSTRALIA vs PLAY OFF</span>
+              <span class="card10-match-score">2 - 2 - 27'</span>
+            </li>
+            <li class="card10-match">
+              <div class="card10-match-left">
+                <span class="card10-match-group">A</span>
+                <img src="./assets/img/croacia-icon.png" alt="Bandera Australia" class="card10-flag" width="36" height="36" />
+                <img src="./assets/img/fifa-icon.jpg" alt="Logo FIFA" class="card10-flag" width="36" height="36" />
+              </div>
+              <span class="card10-match-names">AUSTRALIA vs PLAY OFF</span>
+              <span class="card10-match-score">2 - 2 - 27'</span>
+            </li>
+          </ul>
+        </article>
+        <article class="card card-11 box-height-2 card-11--tabla bg-grilla" data-module="11" data-aos="fade-up" data-aos-duration="400" data-aos-delay="250">
+          <div class="card11-header">
+            <span class="card11-tab card11-tab--active">GRUPO A</span>
+            <span class="card11-tab-label">TABLA DE POSICIONES</span>
+          </div>
+          <ul class="card11-standings list-unstyled mb-0">
+            <li class="card11-row">
+              <img src="./assets/img/england-icon.png" alt="Bandera England" class="card11-flag" width="32" height="32" />
+              <span class="card11-team">England</span>
+              <span class="card11-points">06</span>
+            </li>
+            <li class="card11-row">
+              <img src="./assets/img/croacia-icon.png" alt="Bandera Croatia" class="card11-flag" width="32" height="32" />
+              <span class="card11-team">Croatia</span>
+              <span class="card11-points">03</span>
+            </li>
+            <li class="card11-row">
+              <img src="./assets/img/scotland-icon.png" alt="Bandera Scotland" class="card11-flag" width="32" height="32" />
+              <span class="card11-team">Scotland</span>
+              <span class="card11-points">02</span>
+            </li>
+            <li class="card11-row">
+              <img src="./assets/img/szech-republic-icon.png" alt="Bandera Czech Republic" class="card11-flag" width="32" height="32" />
+              <span class="card11-team">Czech Republic</span>
+              <span class="card11-points">02</span>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </div>
+    <!-- ========== FIN BLOQUE 1 ========== -->
+
+    <!-- ========== INICIO BLOQUE 2: Cards 12 a 18 (wrapper-middle) — 3 columnas (12-13), (14-15-16), (17-18) ========== -->
+    <div class="wrapper-middle">
+      <!-- Columna 1: 12 y 13 -->
+      <div class="block2-col1">
+        <article class="card card-12 box-height-3 card-12--carousel" data-module="12" data-aos="fade-up" data-aos-duration="400">
+            <div class="card03-carousel-wrapper h-100 w-100 overflow-hidden rounded">
+              <div id="card12Carousel" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#card12Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#card12Carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#card12Carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner h-100">
+                  <div class="carousel-item active h-100">
+                    <a href="#slide1" class="card03-slide-link d-block h-100 position-relative text-decoration-none">
+                      <img src="https://picsum.photos/seed/uf1/800/500" class="d-block w-100 h-100 object-fit-cover" alt="Historias" />
+                      <div class="card03-slide-caption position-absolute bottom-0 start-0 end-0 p-4 pb-5">
+                        <h6 class="card03-slide-title text-white fw-bold mb-1">Historias</h6>
+                        <p class="card03-slide-desc small text-white-50 mb-0">Calendario de partidos y lo mejor del fútbol.</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="carousel-item h-100">
+                    <a href="#slide2" class="card03-slide-link d-block h-100 position-relative text-decoration-none">
+                      <img src="https://picsum.photos/seed/uf2/800/500" class="d-block w-100 h-100 object-fit-cover" alt="Estadísticas" />
+                      <div class="card03-slide-caption position-absolute bottom-0 start-0 end-0 p-4 pb-5">
+                        <h6 class="card03-slide-title text-white fw-bold mb-1">Estadísticas</h6>
+                        <p class="card03-slide-desc small text-white-50 mb-0">Seguí las cifras de tu equipo y jugadores favoritos.</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="carousel-item h-100">
+                    <a href="#slide3" class="card03-slide-link d-block h-100 position-relative text-decoration-none">
+                      <img src="https://picsum.photos/seed/uf3/800/500" class="d-block w-100 h-100 object-fit-cover" alt="Calendario" />
+                      <div class="card03-slide-caption position-absolute bottom-0 start-0 end-0 p-4 pb-5">
+                        <h6 class="card03-slide-title text-white fw-bold mb-1">Calendario de partidos</h6>
+                        <p class="card03-slide-desc small text-white-50 mb-0">Ver calendarios y fechas de la temporada.</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#card12Carousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#card12Carousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        <article class="card card-13 box-height-2 card-14-15--hero" data-module="13" data-aos="fade-up" data-aos-duration="400" data-aos-delay="50">
+          <div class="card-hero-media position-relative w-100 h-100 overflow-hidden rounded">
+            <img src="./assets/img/screen-youtube.png" alt="Lo más visto" class="card-hero-img w-100 h-100 object-fit-cover" />
+            <!-- <div class="card-hero-caption position-absolute bottom-0 start-0 end-0 p-3">
+              <h3 class="card-hero-title mb-0">LO MÁS VISTO</h3>
+            </div> -->
+          </div>
+        </article>
+      </div>
+      <!-- Columna 2: 14, 15 y 16 -->
+      <div class="block2-col2">
+        <!-- Card 14 y 15: img de fondo + titular amarillo sobre contenedor con gradiente negro. Para usar tus imágenes: assets/img/top-playeras.png y assets/img/estadios-sedes.png -->
+        <article class="card card-14 box-height-2 card-14-15--hero" data-module="14" data-aos="fade-up" data-aos-duration="400" data-aos-delay="50">
+          <div class="card-hero-media position-relative w-100 h-100 overflow-hidden rounded">
+            <img src="./assets/img/img1.png" alt="Top Playeras - Entrevista" class="card-hero-img w-100 h-100 object-fit-cover" />
+            <div class="card-hero-caption position-absolute bottom-0 start-0 end-0 p-3">
+              <h3 class="card-hero-title mb-0">TOP PLAYERAS / ENTREVISTA</h3>
+            </div>
+          </div>
+        </article>
+        <article class="card card-15 box-height-2 card-14-15--hero" data-module="15" data-aos="fade-up" data-aos-duration="400" data-aos-delay="100">
+          <div class="card-hero-media position-relative w-100 h-100 overflow-hidden rounded">
+            <img src="./assets/img/img2.png" alt="Estadios sedes" class="card-hero-img w-100 h-100 object-fit-cover" />
+            <div class="card-hero-caption position-absolute bottom-0 start-0 end-0 p-3">
+              <h3 class="card-hero-title mb-0">ESTADIOS SEDES</h3>
+            </div>
+          </div>
+        </article>
+        <article class="card card-16 box-height-2 card-14-15--hero" data-module="16" data-aos="fade-up" data-aos-duration="400" data-aos-delay="100">
+          <div class="card-hero-media position-relative w-100 h-100 overflow-hidden rounded">
+            <img src="./assets/img/screen-podcast.png" alt="Estadios sedes" class="card-hero-img w-100 h-100 object-fit-cover" />
+            <!-- <div class="card-hero-caption position-absolute bottom-0 start-0 end-0 p-3">
+              <h3 class="card-hero-title mb-0">ESTADIOS SEDES</h3>
+            </div> -->
+          </div>
+        </article>
+      </div>
+      <!-- Columna 3: 17 y 18 -->
+      <div class="block2-col3">
+        <article class="card card-17 box-height-2 card-14-15--hero" data-module="17" data-aos="fade-up" data-aos-duration="400" data-aos-delay="150">
+          <div class="card-hero-media position-relative w-100 h-100 overflow-hidden rounded">
+            <img src="https://picsum.photos/seed/estadios-sedes/800/500" alt="Estadios sedes" class="card-hero-img w-100 h-100 object-fit-cover" />
+            <div class="card-hero-caption position-absolute bottom-0 start-0 end-0 p-3">
+              <h3 class="card-hero-title mb-0">ESTADIOS SEDES</h3>
+            </div>
+          </div>
+        </article>
+        <article class="card card-18 box-height-2 card-14-15--hero" data-module="18" data-aos="fade-up" data-aos-duration="400" data-aos-delay="150">
+          <div class="card-hero-media position-relative w-100 h-100 overflow-hidden rounded">
+            <img src="./assets/img/bnr1.png" alt="Estadios sedes" class="card-hero-img w-100 h-100 object-fit-cover" />
+            <!-- <div class="card-hero-caption position-absolute bottom-0 start-0 end-0 p-3">
+              <h3 class="card-hero-title mb-0">ESTADIOS SEDES</h3>
+            </div> -->
+          </div>
+        </article>
+      </div>
+    </div>
+    <!-- ========== FIN BLOQUE 2 ========== -->
+
+    <!-- ========== INICIO BLOQUE 3: Cards 19 a 21 (wrapper-bottom) ========== -->
+    <div class="wrapper-bottom">
+      <article class="card card-19 box-height-2.5 card-19--full" data-module="19" data-aos="fade-up" data-aos-duration="400">
+        <div class="card-19__row">
+          <div class="card-19__col">
+            <img src="./assets/img/live-stream.png" alt="" class="card-19__img w-100 h-100 object-fit-cover rounded" />
+          </div>
+          <div class="card-19__col">
+            <img src="./assets/img/chat-preview.png" alt="" class="card-19__img w-100 h-100 object-fit-cover rounded" />
+          </div>
+          <div class="card-19__col card-19__col--bg position-relative overflow-hidden rounded">
+            <img src="./assets/img/logo-universo-futbol-footer.png" alt="" class="card-19__bg w-100 h-100 object-fit-cover" />
+            <div class="card-19__actions position-absolute top-0 start-0 end-0 d-flex justify-content-center gap-2 p-3">
+              <a href="#" class="card-19__btn">Ver todo</a>
+              <a href="#" class="card-19__btn">Enviar nota</a>
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- <article class="card card-20 box-height-2.5" data-module="20" data-aos="fade-up" data-aos-duration="400" data-aos-delay="50">
+        <div class="card-inner"><span>20</span> — Contenido módulo (placeholder)</div>
+      </article> -->
+      
+    </div>
+    <!-- ========== FIN BLOQUE 3 ========== -->
+
+  </div><!-- /.app-wrapper -->
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({ offset: 40, duration: 400, once: true });
+    });
+  </script>
+</body>
+</html>
